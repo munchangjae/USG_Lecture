@@ -1,4 +1,2 @@
-# usg0202
-# usg0202
-# usg0202
-# usg0202
+# USG X Coder's High iosWinterCamp
+
