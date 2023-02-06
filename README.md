@@ -1,2 +1,2 @@
-# USG X Coder's High iosWinterCamp
+# USG X Coder's High : ios Winter Camp
 
