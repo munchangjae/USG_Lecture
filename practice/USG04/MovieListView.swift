@@ -20,9 +20,7 @@ struct MovieResponse: Codable {
 
 struct MovieListView: View {
     @State var Movies:[Movie] = []
-    @State var movie_id: String = ""
-    @State var movieImage: String = ""
-    @State var movieTitle: String = ""
+    @State var selectedMovie: Movie = Movie(_id: "", title: "", image: "")
     
     
     var body: some View {
@@ -31,7 +29,7 @@ struct MovieListView: View {
                 ScrollView(.horizontal){
                     HStack(alignment: .center) {
                         ForEach(Movies, id: \.self) { item in
-                            NavigationLink(destination: DetailView(movies: $Movies)) {
+                            NavigationLink(destination: DetailView(movies: $selectedMovie)) {
                                 AsyncImage(url: URL(string:"http://mynf.codershigh.com:8080"+item.image)) { image in
                                     image.resizable()
                                         .frame(width: 150, height:200)
@@ -39,6 +37,9 @@ struct MovieListView: View {
                                     ProgressView()
                                 }
                             }.buttonStyle(PlainButtonStyle())
+                                .onTapGesture {
+                                    selectedMovie = item
+                                }
                             
                         }
                     }
