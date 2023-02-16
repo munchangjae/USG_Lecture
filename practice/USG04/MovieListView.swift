@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import Foundation // 실험용
+
 struct Movie: Codable, Hashable {
     let _id: String
     let title: String
